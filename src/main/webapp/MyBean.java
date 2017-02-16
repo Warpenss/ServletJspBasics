@@ -4,9 +4,9 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.Vector;
 
 public class MyBean {
-    Vector v = new Vector();
-    String submit = "";
-    String item = "";
+    private final Vector<String> v = new Vector<String>();
+    private String submit = null;
+    private String item = null;
 
     private void addItem(String name) {
         v.addElement(name);
@@ -20,8 +20,8 @@ public class MyBean {
         item = name;
     }
 
-    public void setSubmit(String submit) {
-        this.submit = submit;
+    public void setSubmit(String s) {
+        submit = s;
     }
 
     public String[] getItem() {
@@ -36,7 +36,7 @@ public class MyBean {
     }
 
     public void processRequest (HttpServletRequest request) {
-        if (submit.equals(""))
+        if (submit == null)
             addItem(item);
         if (submit.equals("add"))
             addItem(item);

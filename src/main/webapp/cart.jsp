@@ -15,9 +15,9 @@
 
     Items in your cart:
     <%
-        String[] items = cart.getItems();
-        for (int i = 0; i < items.length; i++) {
-            out.print(main.webapp.HTMLFilter.filter(items[i]));
+        String[] items = cart.getItem();
+        for (String str : items) {
+            out.print(main.webapp.HTMLFilter.filter(str));
         }
     %>
     </body>
