@@ -1,26 +1,53 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
 <html>
-    <head>
-        <title>Shop Page</title>
-    </head>
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
 
-    <body>
-        <form method=POST action="cart.jsp">
-            Select item to add:
+      http://www.apache.org/licenses/LICENSE-2.0
 
-            <select name="items" title="Items">
-                <option>Couch Natali
-                <option>Couch Jocker
-                <option>Sofa Elli
-                <option>Table T-10
-                <option>Table T-11
-                <option>Chair Oak
-                <option>Chair Pine
-            </select>
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
 
-            <input type="submit" name="submit" value="add">
-            <input type="submit" name="submit" value="remove">
-        </form>
-    </body>
+<head>
+    <title>carts</title>
+</head>
+
+<body bgcolor="white">
+<font size = 5 color="#CC0000">
+
+    <form type=POST action=cart.jsp>
+        <BR>
+        Please enter item to add or remove:
+        <br>
+        Add Item:
+
+        <SELECT NAME="item">
+            <OPTION>Beavis & Butt-head Video collection
+            <OPTION>X-files movie
+            <OPTION>Twin peaks tapes
+            <OPTION>NIN CD
+            <OPTION>JSP Book
+            <OPTION>Concert tickets
+            <OPTION>Love life
+            <OPTION>Switch blade
+            <OPTION>Rex, Rugs & Rock n' Roll
+        </SELECT>
+
+
+        <br> <br>
+        <INPUT TYPE=submit name="submit" value="add">
+        <INPUT TYPE=submit name="submit" value="remove">
+
+    </form>
+
+</FONT>
+</body>
 </html>

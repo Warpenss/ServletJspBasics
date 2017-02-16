@@ -1,12 +1,31 @@
+/*
+* Licensed to the Apache Software Foundation (ASF) under one or more
+* contributor license agreements.  See the NOTICE file distributed with
+* this work for additional information regarding copyright ownership.
+* The ASF licenses this file to You under the Apache License, Version 2.0
+* (the "License"); you may not use this file except in compliance with
+* the License.  You may obtain a copy of the License at
+*
+*     http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
 package main.webapp;
 
-import javax.servlet.http.HttpServletRequest;
-import java.util.Vector;
+import java.beans.*;
+import javax.servlet.http.*;
+import javax.servlet.*;
+import java.text.DateFormat;
+import java.util.*;
 
 public class MyBean {
-    private final Vector<String> v = new Vector<String>();
-    private String submit = null;
-    private String item = null;
+    Vector v = new Vector();
+    String submit = null;
+    String item = null;
 
     private void addItem(String name) {
         v.addElement(name);
@@ -24,27 +43,30 @@ public class MyBean {
         submit = s;
     }
 
-    public String[] getItem() {
-        String[] items = new String[v.size()];
-        v.copyInto(items);
-        return items;
+    public String[] getItems() {
+        String[] s = new String[v.size()];
+        v.copyInto(s);
+        return s;
     }
 
-    private void reset(){
-        submit = "";
-        item = "";
-    }
-
-    public void processRequest (HttpServletRequest request) {
+    public void processRequest(HttpServletRequest request) {
+        // null value for submit - user hit enter instead of clicking on
+        // "add" or "remove"
         if (submit == null)
             addItem(item);
+
         if (submit.equals("add"))
             addItem(item);
         else if (submit.equals("remove"))
             removeItem(item);
 
+        // reset at the end of the request
         reset();
     }
 
-
+    // reset
+    private void reset() {
+        submit = null;
+        item = null;
+    }
 }
