@@ -5,6 +5,20 @@
     </head>
 
     <body>
-    oops, wtf, where is my cart, dude?
+    <jsp:useBean id="cart" scope="session" class="main.webapp.MyBean" />
+
+    <jsp:setProperty name="cart" property="*" />
+
+    <%
+        cart.processRequest(request);
+    %>
+
+    Items in your cart:
+    <%
+        String[] items = cart.getItems();
+        for (int i = 0; i < items.length; i++) {
+            out.print(main.webapp.HTMLFilter.filter(items[i]));
+        }
+    %>
     </body>
 </html>
