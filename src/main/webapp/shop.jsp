@@ -1,53 +1,26 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<!--
- Licensed to the Apache Software Foundation (ASF) under one or more
-  contributor license agreements.  See the NOTICE file distributed with
-  this work for additional information regarding copyright ownership.
-  The ASF licenses this file to You under the Apache License, Version 2.0
-  (the "License"); you may not use this file except in compliance with
-  the License.  You may obtain a copy of the License at
+    <head>
+        <title>carts</title>
+    </head>
 
-      http://www.apache.org/licenses/LICENSE-2.0
-
-  Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an "AS IS" BASIS,
-  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  See the License for the specific language governing permissions and
-  limitations under the License.
--->
-
-<head>
-    <title>carts</title>
-</head>
-
-<body bgcolor="white">
-<font size = 5 color="#CC0000">
-
-    <form type=POST action=cart.jsp>
-        <BR>
-        Please enter item to add or remove:
+    <body bgcolor="#e0ffff">
+    <font size = 4 color="#2f4f4f">
+        Couch Nicol
         <br>
-        Add Item:
-
-        <SELECT NAME="item">
-            <OPTION>Beavis & Butt-head Video collection
-            <OPTION>X-files movie
-            <OPTION>Twin peaks tapes
-            <OPTION>NIN CD
-            <OPTION>JSP Book
-            <OPTION>Concert tickets
-            <OPTION>Love life
-            <OPTION>Switch blade
-            <OPTION>Rex, Rugs & Rock n' Roll
-        </SELECT>
-
-
-        <br> <br>
-        <INPUT TYPE=submit name="submit" value="add">
-        <INPUT TYPE=submit name="submit" value="remove">
-
-    </form>
-
-</FONT>
-</body>
+        ID:1
+        <br>
+        Size: 200x180x86 cm
+        <br>
+        Color: Black
+        <br>
+        Type: Sofa
+        <br>
+        Terms: 8 weeks
+        <br>
+        <form action="cart.jsp" method="post">
+            <button name="submitbutton" type="submit" value="Couch Nicol">Buy</button>
+        </form>
+    </FONT>
+    </body>
 </html>
